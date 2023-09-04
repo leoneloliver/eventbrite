@@ -127,6 +127,12 @@ body{
 .card-loader{
   width: 100%;
 }
+
+.login svg{
+  margin: 5px 9px 1px 3px;
+  float: left;
+  background: #fff;
+}
 @keyframes lds-ring {
   0% {
     transform: rotate(0deg);

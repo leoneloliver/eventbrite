@@ -8,6 +8,7 @@ import {
   DocumentReference,
 } from 'firebase/firestore';
 import { UserCredential, signInWithPopup, signOut } from 'firebase/auth';
+import { FcGoogle } from "react-icons/fc";
 
 interface Post {
   id: number;
@@ -104,10 +105,21 @@ function Add() {
   return (
     <div className="App">
       {!isAuth ? (
-        <button onClick={signInWithGoogle}>Sign in</button>
+        
+        <div className='flex flex-col items-center justify-center p-5'>
+          <button onClick={signInWithGoogle} className="login bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
+          <FcGoogle />  Sign in
+          </button>
+        </div>
       ) : (
         <>
-          <button onClick={signUserOut}>Log Out</button>
+
+          <div className='flex flex-col items-center justify-center p-5'>
+            <button onClick={signUserOut} className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
+            Log Out
+            </button>
+          </div>
+  
         </>
       )}
 

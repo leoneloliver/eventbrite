@@ -75,20 +75,20 @@ body{
 .load-title {
   margin-top: 30px;
   height: 20px;
-  background: #ccc;
+  background: #e8e7e7;
   width: 95%;
 }
 
 .load-text {
   margin-top: 15px;
   height: 18px;
-  background: #ccc;
+  background: #e8e7e7;
   width: 92%;
 }
 
 .load-image {
   height: 150px;
-  background: #ccc;
+  background: #e8e7e7;
 }
 
 .list-container{

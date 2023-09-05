@@ -1,6 +1,15 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 function Header() {
+  const [isAuth, setIsAuth] = useState(localStorage.getItem('isAuth'));
+
+  const signUserOut = () => {
+    localStorage.clear();
+    setIsAuth(null);
+    window.location.pathname = '/';
+  };
+
   return (
     <>
       <nav className="bg-white search mb-5 border-b-slate-200 border-zinc-950">
@@ -85,12 +94,22 @@ function Header() {
                 </Link>
               </li>
               <li>
+              {isAuth ? 
+                <Link
+                  to='#'
+                  onClick={signUserOut}
+                  className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0"
+                >
+                  Log Out
+                </Link>
+                :
                 <Link
                   to="/Add"
                   className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0"
                 >
                   Log In
                 </Link>
+                }
               </li>
             </ul>
           </div>

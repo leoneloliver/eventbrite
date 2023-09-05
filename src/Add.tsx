@@ -10,15 +10,6 @@ import {
 import { UserCredential, signInWithPopup, signOut } from 'firebase/auth';
 import { FcGoogle } from "react-icons/fc";
 
-interface Post {
-  id: number;
-  title: string;
-  post: string;
-  image: string;
-  timestamp: Timestamp;
-  date: string;
-  location: string;
-}
 
 function Add() {
   const [isAuth, setIsAuth] = useState(localStorage.getItem('isAuth'));
@@ -102,7 +93,9 @@ function Add() {
       });
   };
 
+
   return (
+    <>
     <div className="App">
       {!isAuth ? (
         
@@ -125,6 +118,10 @@ function Add() {
 
       <div className="flex flex-col items-center justify-center min-h-screen">
         {isAuth ? (
+         <>
+          <div>
+            <h2 className='font-medium text-gray-700 items-center justify-center p-5'>Add a new event</h2>
+          </div>
           <div className="w-full max-w-md p-4 border rounded-lg shadow-md">
             <form
               className="w-full max-w-md m-auto p-4 border rounded-lg shadow-md bg-gray-100"
@@ -145,7 +142,7 @@ function Add() {
               </div>
               <div className="mb-4">
                 <label htmlFor="post" className="block font-medium text-gray-700">
-                  Post
+                  Detail
                 </label>
                 <textarea
                   className="w-full px-3 py-2 mt-1 text-gray-700 border rounded-md focus:outline-none focus:border-blue-500"
@@ -205,9 +202,11 @@ function Add() {
             </form>
             <p className="mt-4 text-red-500">{message}</p>
           </div>
+         </>
         ) : null}
       </div>
     </div>
+    </>
   );
 }
 

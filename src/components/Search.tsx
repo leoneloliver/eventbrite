@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+
+
 
 interface SearchFormProps {
   searchQuery: string;
@@ -8,6 +10,9 @@ interface SearchFormProps {
 }
 
 function SearchForm({ searchQuery, setSearchQuery, handleSubmit }: SearchFormProps) {
+  const [isAuth] = useState(localStorage.getItem('isAuth'));
+
+
   return (
     <>
       <nav className="bg-white search mb-5 border-b-slate-200 border-zinc-950">
@@ -137,12 +142,21 @@ function SearchForm({ searchQuery, setSearchQuery, handleSubmit }: SearchFormPro
                 </a>
               </li>
               <li>
+                {isAuth ? 
+                <a
+                  href='Add'
+                  className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0"
+                >
+                  Log Out
+                </a>
+                :
                 <a
                   href="/Add"
                   className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0"
                 >
                   Log In
                 </a>
+                }
               </li>
             </ul>
           </div>

@@ -55,7 +55,7 @@ function PostDetail() {
               <FaMapMarkerAlt /> {post.location}
             </p>
             <h4 className="text-2xl font-bold tracking-tight mt-8">About</h4>
-            <p className="mb-2 mt-5 text-base tracking-tight" dangerouslySetInnerHTML={{ __html: post.post }}></p>
+            <div className="mb-2 mt-5 text-base tracking-tight" dangerouslySetInnerHTML={{ __html: post.post }}></div>
           </div>
         </div>
       ) : (

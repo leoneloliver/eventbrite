@@ -76,7 +76,7 @@ function PostDetail() {
 
                   <button
                     type="button"
-                    className="ticket focus:outline-none text-white bg-orange-600 hover:bg-orange-500 focus:ring-1 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5  mb-2 dark:focus:ring-yellow-900"
+                    className="ticket focus:outline-none text-white bg-orange-600 hover:bg-orange-500  font-medium rounded-lg text-sm px-5 py-2.5  mb-2 "
                   >
                     Get Tickets
                   </button>

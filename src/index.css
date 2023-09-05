@@ -153,7 +153,18 @@ nav svg.w-5.h-5 {
 .ticket{
   width: 100% !important;
 }
-
+footer li a{
+  font-size: 0.8rem;
+}
+footer li a:hover{
+  text-decoration: underline;
+}
+.bg-blue-1000{
+  background-color: #0a153a;
+}
+.bg-blue-1000 p{
+  font-size: 0.7rem;
+}
 @media only screen and (max-width: 1024px) {
 
   .thumb{

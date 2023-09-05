@@ -122,9 +122,9 @@ function Add() {
           <div>
             <h2 className='font-medium text-gray-700 items-center justify-center p-5'>Add a new event</h2>
           </div>
-          <div className="w-full max-w-md p-4 border rounded-lg shadow-md">
+          <div className="w-full max-w-xl p-4 border rounded-lg shadow-md">
             <form
-              className="w-full max-w-md m-auto p-4 border rounded-lg shadow-md bg-gray-100"
+              className="w-full max-w-lx m-auto p-4 border rounded-lg shadow-md bg-gray-100"
               onSubmit={submitHandler}
             >
               <div className="mb-4">
@@ -149,7 +149,7 @@ function Add() {
                   name="post"
                   id="post"
                   rows={4}
-                  placeholder="Post"
+                  placeholder="Derail"
                   onChange={postHandler}
                   value={post}
                 ></textarea>

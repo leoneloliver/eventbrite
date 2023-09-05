@@ -150,6 +150,9 @@ nav svg.w-5.h-5 {
   }
 }
 
+.ticket{
+  width: 100% !important;
+}
 
 @media only screen and (max-width: 1024px) {
 
@@ -166,4 +169,16 @@ nav svg.w-5.h-5 {
   }
   
 
+}
+
+@media (min-width: 640px) {
+  .scroll-fixed {
+    position: sticky;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      overflow-y: auto;
+      z-index: 50;
+
+  }
 }

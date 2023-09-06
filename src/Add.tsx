@@ -149,7 +149,7 @@ function Add() {
                   name="post"
                   id="post"
                   rows={4}
-                  placeholder="Derail"
+                  placeholder="Detail"
                   onChange={postHandler}
                   value={post}
                 ></textarea>

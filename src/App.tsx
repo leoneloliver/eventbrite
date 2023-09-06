@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { db } from './firebase';
-import { collection, getDocs, orderBy, query } from 'firebase/firestore';
+import { collection, getDocs, orderBy, query, doc} from 'firebase/firestore';
 import Search from './components/Search';
 import PostList from './components/PostList';
 import Footer from './components/Footer';
@@ -26,16 +26,20 @@ function App() {
       try {
         const q = query(collection(db, 'blog'), orderBy('timestamp', 'desc'));
         const querySnapshot = await getDocs(q);
-        const posts = querySnapshot.docs.map((doc) => doc.data() as Post);
+        const posts = querySnapshot.docs.map((doc) => ({
+          idkey: doc.id,          // Add the 'id' field with the document ID
+          ...doc.data() as Post
+        }));
         setPostList(posts);
       } catch (error) {
         console.error('Error fetching posts:', error);
         setMessage('Error: Unable to fetch posts. Please try again later.');
       }
     };
-
+  
     fetchPosts();
   }, []);
+  
 
   useEffect(() => {
     if (searchQuery === '') {

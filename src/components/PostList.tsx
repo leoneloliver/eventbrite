@@ -1,3 +1,5 @@
+import { deleteDoc, doc } from 'firebase/firestore';
+import { db } from '../firebase';
 import { useState } from 'react';
 import { FaRegHeart } from "react-icons/fa";
 import Loader from './Loader';
@@ -10,6 +12,12 @@ function PostList({ filteredPosts }: any | null) {
   window.setTimeout(() => {
     setPostList(filteredPosts)
   },1000)
+
+  const deletePost = async (idkey : any) => {
+    const postDoc = doc(db, "blog", idkey);
+    await deleteDoc(postDoc);
+    window.location.pathname = '/';
+  };
 
 
   return (
@@ -48,6 +56,16 @@ function PostList({ filteredPosts }: any | null) {
                   {post.location}
                 </p>
                 
+              </div>
+              <div className='delete-post'>
+                  <button
+                      onClick={() => {
+                        deletePost(post.idkey);
+                      }}
+                    >
+                      {" "}
+                      &#128465;
+                  </button>
               </div>
                 
             </div>

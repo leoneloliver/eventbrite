@@ -1,7 +1,7 @@
 import { deleteDoc, doc } from 'firebase/firestore';
 import { db } from '../firebase';
 import { useState } from 'react';
-import { FaRegHeart } from "react-icons/fa";
+import { FaRegHeart, FaRegTrashAlt } from "react-icons/fa";
 import Loader from './Loader';
 
 
@@ -59,14 +59,15 @@ function PostList({ filteredPosts }: any | null) {
                 
               </div>
               {isAuth ? 
-                <div className='delete-post'>
+                <div className='delete-post p-4'>
                   <button
                       onClick={() => {
                         deletePost(post.idkey);
                       }}
+                      className="text-red-400 btn-delete"
                     >
                       {" "}
-                      &#128465;
+                      <FaRegTrashAlt />
                   </button>
                 </div>
               : null}

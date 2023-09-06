@@ -165,6 +165,17 @@ footer li a:hover{
 .bg-blue-1000 p{
   font-size: 0.7rem;
 }
+.btn-delete{
+  border: 1px solid;
+  padding: 8px;
+}
+.btn-delete:hover{
+  color: #fff;
+  background-color: red;
+}
+.delete-post{
+  display: none;
+}
 @media only screen and (max-width: 1024px) {
 
   .thumb{

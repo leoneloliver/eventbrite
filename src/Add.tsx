@@ -148,7 +148,7 @@ function Add() {
                   className="w-full px-3 py-2 mt-1 text-gray-700 border rounded-md focus:outline-none focus:border-blue-500"
                   name="post"
                   id="post"
-                  rows={4}
+                  rows={12}
                   placeholder="Detail"
                   onChange={postHandler}
                   value={post}

@@ -8,6 +8,7 @@ import Loader from './Loader';
 function PostList({ filteredPosts }: any | null) {
 
   const [postList, setPostList] = useState<any | null >(null);
+  const [isAuth] = useState(localStorage.getItem('isAuth'));
 
   window.setTimeout(() => {
     setPostList(filteredPosts)
@@ -57,7 +58,8 @@ function PostList({ filteredPosts }: any | null) {
                 </p>
                 
               </div>
-              <div className='delete-post'>
+              {isAuth ? 
+                <div className='delete-post'>
                   <button
                       onClick={() => {
                         deletePost(post.idkey);
@@ -66,7 +68,8 @@ function PostList({ filteredPosts }: any | null) {
                       {" "}
                       &#128465;
                   </button>
-              </div>
+                </div>
+              : null}
                 
             </div>
 

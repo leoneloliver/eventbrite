@@ -58,7 +58,7 @@ function PostList({ filteredPosts }: any | null) {
                 </p>
                 
               </div>
-              {isAuth ? 
+              {isAuth && post.id > 16 ? 
                 <div className='delete-post p-4'>
                   <button
                       onClick={() => {

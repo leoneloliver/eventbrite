@@ -16,7 +16,7 @@ function Add() {
   const [input, setInput] = useState<string>('');
   const [post, setPost] = useState<string>('');
   const [image, setImage] = useState<string>('');
-  const [message, setMessage] = useState<string>('Register New Users');
+  const [message, setMessage] = useState<string>('Register New Event');
   const [location, setLocation] = useState<string>('Toronto, ON');
   const [date, setDate] = useState<string>('Tue, Sep 5, 10:00 PM');
 
@@ -42,9 +42,9 @@ function Add() {
 
   const submitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (input) {
+    if (input && image && post) {
       const currentDate = Timestamp.now();
-      const randomId = Math.floor(Math.random() * (10000 - 10 + 1)) + 10;
+      const randomId = Math.floor(Math.random() * (10000 - 10 + 1)) + 16;
 
       try {
         const docRef: DocumentReference = await addDoc(collection(db, 'blog'), {
@@ -66,7 +66,7 @@ function Add() {
         setMessage('Error: Unable to add post. Please try again later.');
       }
     } else {
-      setMessage('You have to type something!');
+      setMessage('You have to fill all the fields!');
     }
   };
 
@@ -178,7 +178,10 @@ function Add() {
                   value={location}
                 >
                   <option value="Toronto, ON">Toronto, ON</option>
+                  <option value="Vancouver, BC">Vancouver, BC</option>
                   <option value="San Francisco, CA">San Francisco, CA</option>
+                  <option value="New York, NY">New York, NY</option>
+
                 </select>
               </div>
               <div className="mb-4">

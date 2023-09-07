@@ -165,6 +165,14 @@ footer li a:hover{
 .bg-blue-1000 p{
   font-size: 0.7rem;
 }
+.delete-post{
+  background-color: #f0d0d0;
+  opacity: 0;
+  margin-top: -32px;
+  z-index: 0;
+  position: relative;
+  box-shadow: 0px -3px 11px 2px #e3e3e3;
+}
 .btn-delete{
   border: 1px solid;
   padding: 8px;
@@ -172,6 +180,9 @@ footer li a:hover{
 .btn-delete:hover{
   color: #fff;
   background-color: red;
+}
+.card:hover .delete-post{
+  opacity: 9.9;
 }
 
 @media only screen and (max-width: 1024px) {

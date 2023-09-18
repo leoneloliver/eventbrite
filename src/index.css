@@ -213,3 +213,21 @@ footer li a:hover{
 
   }
 }
+
+.gradient-bg {
+  background: linear-gradient(90deg,#e8e7e7, #f6f6f6);
+  background-size: 200% 100%;
+  animation: gradientAnimation 1s linear infinite;
+}
+
+@keyframes gradientAnimation {
+  0% {
+      background-position: 0 0;
+  }
+  100% {
+      background-position: 100% 0;
+  }
+}
+
+
+

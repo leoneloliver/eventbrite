@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { FaCalendarDay, FaMapMarkerAlt } from 'react-icons/fa';
 import { db } from './firebase';
@@ -29,6 +29,7 @@ function PostDetail() {
           setPost(postData);
         } else {
           console.log('Post not found');
+          window.location.pathname = '/';
         }
       } catch (error) {
         console.error('Error fetching post:', error);

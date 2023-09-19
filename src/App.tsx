@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react';
 import { db } from './firebase';
-import { collection, getDocs, orderBy, query, doc} from 'firebase/firestore';
+import { collection, getDocs, orderBy, query} from 'firebase/firestore';
 import Search from './components/Search';
 import PostList from './components/PostList';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import Add from './Add';
 import BlogView from './Details';
+import Error from './components/Error';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 interface Post {
@@ -15,7 +16,6 @@ interface Post {
 }
 
 function App() {
-  const [message, setMessage] = useState<string>('Register New Users');
   const [postList, setPostList] = useState<Post[]>([]);
 
   const [searchQuery, setSearchQuery] = useState<string>('');
@@ -33,7 +33,6 @@ function App() {
         setPostList(posts);
       } catch (error) {
         console.error('Error fetching posts:', error);
-        setMessage('Error: Unable to fetch posts. Please try again later.');
       }
     };
   
@@ -100,6 +99,7 @@ function App() {
                 </>
               }
             />
+            <Route path='*' element={<> <Header /><Error /></>}/>
           </Routes>
         </Router>
         <Footer />
